@@ -18,6 +18,8 @@
 		C573DC392695AA3D0053250E /* goalpost_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C573DC372695AA3D0053250E /* goalpost_app.xcdatamodeld */; };
 		C573DC3B2695AA3E0053250E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C573DC3A2695AA3E0053250E /* Assets.xcassets */; };
 		C573DC3E2695AA3E0053250E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C573DC3C2695AA3E0053250E /* LaunchScreen.storyboard */; };
+		C5AABE65269C2D3D00399BEB /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AABE64269C2D3D00399BEB /* UIViewExt.swift */; };
+		C5AABE68269C2D4C00399BEB /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AABE67269C2D4C00399BEB /* UIButtonExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		C573DC3A2695AA3E0053250E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C573DC3D2695AA3E0053250E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C573DC3F2695AA3E0053250E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5AABE64269C2D3D00399BEB /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		C5AABE67269C2D4C00399BEB /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				C54DE4F526985D6D00F0B9FA /* UIViewControllerExt.swift */,
+				C5AABE64269C2D3D00399BEB /* UIViewExt.swift */,
+				C5AABE67269C2D4C00399BEB /* UIButtonExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -184,6 +190,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5AABE65269C2D3D00399BEB /* UIViewExt.swift in Sources */,
+				C5AABE68269C2D4C00399BEB /* UIButtonExt.swift in Sources */,
 				C573DC332695AA3D0053250E /* GoalsVC.swift in Sources */,
 				C573DC2F2695AA3D0053250E /* AppDelegate.swift in Sources */,
 				C54DE4F626985D6D00F0B9FA /* UIViewControllerExt.swift in Sources */,
