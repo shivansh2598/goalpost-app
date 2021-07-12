@@ -19,7 +19,6 @@ extension UIView {
         let endingFrame = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
         let deltaY = endingFrame.origin.y - startingFrame.origin.y
-        debugPrint(deltaY)
         
         //function to animate a UIView element
         UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: KeyframeAnimationOptions(rawValue: curve), animations: {

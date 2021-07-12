@@ -20,6 +20,7 @@
 		C573DC3E2695AA3E0053250E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C573DC3C2695AA3E0053250E /* LaunchScreen.storyboard */; };
 		C5AABE65269C2D3D00399BEB /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AABE64269C2D3D00399BEB /* UIViewExt.swift */; };
 		C5AABE68269C2D4C00399BEB /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AABE67269C2D4C00399BEB /* UIButtonExt.swift */; };
+		C5AABE6F269C4F1700399BEB /* FinalGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AABE6E269C4F1700399BEB /* FinalGoalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C573DC3F2695AA3E0053250E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5AABE64269C2D3D00399BEB /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		C5AABE67269C2D4C00399BEB /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		C5AABE6E269C4F1700399BEB /* FinalGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalGoalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				C573DC322695AA3D0053250E /* GoalsVC.swift */,
 				C54DE4F12698501200F0B9FA /* CreateGoalVC.swift */,
+				C5AABE6E269C4F1700399BEB /* FinalGoalVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				C5AABE65269C2D3D00399BEB /* UIViewExt.swift in Sources */,
 				C5AABE68269C2D4C00399BEB /* UIButtonExt.swift in Sources */,
 				C573DC332695AA3D0053250E /* GoalsVC.swift in Sources */,
+				C5AABE6F269C4F1700399BEB /* FinalGoalVC.swift in Sources */,
 				C573DC2F2695AA3D0053250E /* AppDelegate.swift in Sources */,
 				C54DE4F626985D6D00F0B9FA /* UIViewControllerExt.swift in Sources */,
 				C522DA2026977F6B00B6F51C /* GoalType.swift in Sources */,
