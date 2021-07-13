@@ -32,6 +32,35 @@ class FinalGoalVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func createGoalBtnWasPressed(_ sender: Any) {
+        if(pointsTextField.text != "") {
+            self.save { (complete) in
+                if complete {
+                    dismiss(animated: true, completion: nil)
+                } else {
+                    
+                }
+            }
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        pointsTextField.text = ""
+    }
+    
+    func save(completion: (_ finished : Bool) -> ()){
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        let goal = Goal(context: managedContext)
+        goal.goalDescription = goalDescription
+        goal.goalType = goalType.rawValue
+        goal.goalCompletionValue = Int32(pointsTextField.text!)!
+        goal.goalProgress = Int32(0)
         
+        do {
+            try managedContext.save()
+            completion(true)
+        } catch {
+            debugPrint("\(error.localizedDescription)")
+            completion(false)
+        }
     }
 }
