@@ -57,7 +57,6 @@ class FinalGoalVC: UIViewController, UITextFieldDelegate {
         
         do {
             try managedContext.save()
-            print(goal)
             completion(true)
         } catch {
             debugPrint("\(error.localizedDescription)")

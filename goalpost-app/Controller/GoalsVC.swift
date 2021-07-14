@@ -14,7 +14,7 @@ class GoalsVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var goals : [Goal] = [Goal]()
+    var goals : [Goal] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,11 @@ class GoalsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchCoreData()
+        tableView.reloadData()
+    }
+    
+    func fetchCoreData(){
         self.fetch { (success) in
             if goals.count >= 1 {
                 tableView.isHidden = false
@@ -31,7 +36,6 @@ class GoalsVC: UIViewController {
                 tableView.isHidden = true
             }
         }
-        tableView.reloadData()
     }
     
     @IBAction func addGoalBtnWasPressed(_ sender: Any) {
@@ -56,9 +60,48 @@ extension GoalsVC : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "DELETE") { (rowAction, view, completed) in
+            self.removeGoal(atIndexPath: indexPath)
+            self.fetchCoreData()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            completed(true)
+        }
+        
+        let incrementAction = UIContextualAction(style: .normal, title: "ADD 1") { (rowAction, view, completed) in
+            self.setProgress(atIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        incrementAction.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+        let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction, incrementAction])
+        return swipeAction
+    }
 }
 
+
 extension GoalsVC {
+    
+    func removeGoal(atIndexPath indexPath : IndexPath)
+    {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        managedContext.delete(goals[indexPath.row])
+        
+        do {
+            try managedContext.save()
+            print("Successfully removed goal!!")
+        } catch  {
+            debugPrint("Could not remove \(error.localizedDescription)")
+        }
+    }
     
     func fetch(_ completion : (Bool)->())
     {
@@ -70,8 +113,28 @@ extension GoalsVC {
             goals = try managedContext.fetch(fetchRequest)
             completion(true)
         } catch  {
-            debugPrint("Error occured \(error.localizedDescription)")
+            debugPrint("Fetch request failed \(error.localizedDescription)")
             completion(false)
+        }
+    }
+    
+    func setProgress(atIndexPath indexPath : IndexPath)
+    {
+        guard  let managedContext = appDelegate?.persistentContainer.viewContext else {
+            return
+        }
+        
+        let choosenGoal = goals[indexPath.row]
+        if choosenGoal.goalProgress < choosenGoal.goalCompletionValue {
+            choosenGoal.goalProgress += 1
+        } else {
+        }
+        
+        do {
+            try managedContext.save()
+            debugPrint("Modification done successfully!!")
+        } catch  {
+            debugPrint("Modification failed \(error.localizedDescription)")
         }
     }
 }

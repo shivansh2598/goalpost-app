@@ -132,13 +132,33 @@
                                                     <color key="textColor" red="0.42745098040000001" green="0.73725490199999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQs-nx-Wqi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="4AZ-lM-Eee">
+                                                            <rect key="frame" x="84.5" y="7.5" width="245.5" height="55"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="0.7388763427734375" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="4AZ-lM-Eee" firstAttribute="centerX" secondItem="dQs-nx-Wqi" secondAttribute="centerX" id="4I7-v0-rJb"/>
+                                                        <constraint firstItem="4AZ-lM-Eee" firstAttribute="centerY" secondItem="dQs-nx-Wqi" secondAttribute="centerY" id="vqq-75-sul"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="HuB-LV-dCG" secondAttribute="bottom" id="5Nc-fK-8FE"/>
+                                                <constraint firstAttribute="trailing" secondItem="dQs-nx-Wqi" secondAttribute="trailing" id="Fl7-Tv-8gD"/>
                                                 <constraint firstItem="tB2-dv-KOj" firstAttribute="top" secondItem="yD5-KQ-huW" secondAttribute="topMargin" id="Fza-gD-EjG"/>
                                                 <constraint firstItem="HuB-LV-dCG" firstAttribute="top" secondItem="yD5-KQ-huW" secondAttribute="top" id="IPG-gB-0a3"/>
+                                                <constraint firstItem="dQs-nx-Wqi" firstAttribute="top" secondItem="yD5-KQ-huW" secondAttribute="top" id="JdR-wa-zQ5"/>
                                                 <constraint firstItem="tB2-dv-KOj" firstAttribute="leading" secondItem="yD5-KQ-huW" secondAttribute="leadingMargin" constant="10" id="PS3-Ho-fqB"/>
                                                 <constraint firstAttribute="trailing" secondItem="HuB-LV-dCG" secondAttribute="trailing" constant="10" id="PX8-5L-EHc"/>
+                                                <constraint firstAttribute="bottom" secondItem="dQs-nx-Wqi" secondAttribute="bottom" id="gFT-uy-9xI"/>
+                                                <constraint firstItem="dQs-nx-Wqi" firstAttribute="leading" secondItem="yD5-KQ-huW" secondAttribute="leading" id="jzV-Mg-BCC"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="tB2-dv-KOj" secondAttribute="bottom" id="uRP-3f-yS7"/>
                                                 <constraint firstItem="HuB-LV-dCG" firstAttribute="leading" secondItem="tB2-dv-KOj" secondAttribute="trailing" constant="10" id="vq9-5A-MOj"/>
                                             </constraints>
