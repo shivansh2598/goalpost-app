@@ -41,7 +41,7 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
         if goalTextView.text != "" && goalTextView.text != "Enter your goal.." {
             guard let finalGoalVC = storyboard?.instantiateViewController(identifier: "FinalGoalVC") as? FinalGoalVC else { return }
             finalGoalVC.initData(description: goalTextView.text!, goalType: selectedGoalType)
-            presentDetail(finalGoalVC)
+            presentingViewController?.presentSecondaryDetail(finalGoalVC)
         }
     }
     
