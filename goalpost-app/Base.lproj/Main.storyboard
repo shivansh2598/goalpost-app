@@ -164,6 +164,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="finishTaskDisplay" destination="dQs-nx-Wqi" id="cfT-kP-zyp"/>
                                             <outlet property="goalDescritionLbl" destination="SBR-i7-dRP" id="cKT-zJ-I5h"/>
                                             <outlet property="goalProgressLbl" destination="HuB-LV-dCG" id="hMB-Ec-vs1"/>
                                             <outlet property="goalTypeLbl" destination="NrI-s1-5e2" id="8FL-pw-MOy"/>
